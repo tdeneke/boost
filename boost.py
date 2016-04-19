@@ -6,7 +6,6 @@ from random import randint
 from time import sleep
 import sys
 import subprocess
-import os
 
 # returns a date string for the date that is N days before STARTDATE
 def get_date_string(n, startdate):
@@ -29,7 +28,7 @@ def main(argv):
 		curdate = get_date_string(i, startdate)
 		num_commits = randint(1, 10)
 		for commit in range(0, num_commits):
-            subprocess.call("echo '" + curdate + str(randint(0, 1000000)) +"' > boost.txt; git add boost.txt; GIT_AUTHOR_DATE='" + curdate + "' GIT_COMMITTER_DATE='" + curdate + "' git commit -m 'update'; git push;", shell=True)
+			subprocess.call("echo '" + curdate + str(randint(0, 1000000)) +"' > boost.txt; git add boost.txt; GIT_AUTHOR_DATE='" + curdate + "' GIT_COMMITTER_DATE='" + curdate + "' git commit -m 'update'; git push;", shell=True)
 			sleep(.5)
 		i += 1
 	subprocess.call("git rm boost.txt; git commit -m 'delete'; git push;", shell=True)
