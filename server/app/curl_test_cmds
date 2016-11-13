@@ -9,3 +9,5 @@ curl -i -X POST -H "Content-Type:application/json" http://localhost:5000/api/v1/
 
 curl -v --insecure --anyauth --user test@test.com:letmein  -X POST -H "Content-Type:application/json" http://localhost:5000/api/v1/posts -d '{"title":"test post", "body":"my first test bost"}'
 
+
+
